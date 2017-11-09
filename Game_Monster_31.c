@@ -30,8 +30,7 @@ int main()
 	do
 	{
         system("cls");	z=1;
-        printf("====Obonk Warrior====\n\n");
-        printf("\t\t====Dynasty Warrior====\n\n");
+        printf("\t\t========Dynasty Warrior========\n\n");
         printf("\t\t| Monster | 1 | 2 | 3 | 4 | 5 |\n");
         printf("\t\t| hp      |200|200|200|200|200|\n");
         printf("\t\t| Atk     |30 |50 |70 |40 |70 |\n");
@@ -121,6 +120,6 @@ int main()
             if(h1<=0){printf("\n\nYou Win!...");z=0;getch();}
             else if(h2<=0){printf("\n\nMantap Bos...");z=0;getch();}
             else if(h1<=0&&h2<=0){printf("\n\nSeri BOS?...");z=0;getch();}
-        }while(z!=0);
+            }while(z!=0);
 	}while(u!=0);
 }
