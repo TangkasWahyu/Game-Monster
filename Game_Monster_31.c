@@ -2,6 +2,8 @@
     Nama    : I Made Tangkas Wahyu Kencana Yuda
     NIM     : 1608561031
     Matkul  : Pratikum Struktur Data
+    Penjelasan:
+    Program ini menyimulasikan permainan menyerang dan bertahan (attack and defence) yang mengimplementasikan struktur data stack, queue, dan linked list.
 */
 
 #include<stdio.h>
@@ -27,8 +29,8 @@ int main()
 	dt[0].def = 20; dt[1].def = 50; dt[2].def = 30; dt[3].def = 30; dt[4].def = 90;
 	do
 	{
-        system("cls");
-        z=1;
+        system("cls");	z=1;
+        printf("====Obonk Warrior====\n\n");
         printf("\t\t====Dynasty Warrior====\n\n");
         printf("\t\t| Monster | 1 | 2 | 3 | 4 | 5 |\n");
         printf("\t\t| hp      |200|200|200|200|200|\n");
@@ -38,13 +40,12 @@ int main()
         {
             printf("%d. %s\n",i+1,nama[i]);
         }
-        printf("Pilih Warrior Anda: ");
-        scanf("%d",&p);
+        printf("Pilih Warrior Anda: "),scanf("%d",&p);
         srand(time(0));
         c=p-1;
         for(i=0;i<10;i++)
         {
-            rn=rand()%5;
+            rn=rand()%5; // jika tambah data, rubah %data disini
             if(rn!=c)
             {
                 break;
@@ -61,8 +62,8 @@ int main()
             do
             {
             system("cls");
-            printf("Player: %d\nHP: %s\nAtk: %d\nDef: %d\n\n",nama[c],dt[c].atk,dt[c].def,h1);
-            printf("Boss: %d\nHP: %s\nAtk: %d\nDef: %d\n\n",nama[rn],dt[rn].atk,dt[rn].def,h2);
+            printf("Player: %s\nAtk: %d\nDef: %d\nHP : %d\n\n",nama[c],dt[c].atk,dt[c].def,h1);
+            printf("Boss: %s\nAtk: %d\nDef: %d\nHP : %d\n\n",nama[rn],dt[rn].atk,dt[rn].def,h2);
             printf("Serang(1)/Bertahan(0): "),scanf("%d",&s);
             }while(s<0||s>1);
             r=rand()%2;
@@ -72,38 +73,26 @@ int main()
             switch(y)
             {
                 case 1:
-                strcpy(serang1, "serang");
-                break;
+                    strcpy(serang1, "Serang");
+                    break;
                 case 2:
-                strcpy(serang1,"serang");
-                break;
+                    strcpy(serang1,"Serang");
+                    break;
                 case 3:
-                strcpy(serang1,"serang");
-                break;
-                case 4:
-                strcpy(serang2,"serang");
-                break;
-                case 5:
-                strcpy(serang2,"serang");
+                    strcpy(serang1,"Serang");
                 break;
             }
             switch(y)
             {
                 case 1:
-                strcpy(serang2, "serang");
-                break;
+                    strcpy(serang2, "Serang");
+                    break;
                 case 2:
-                strcpy(serang2,"serang");
-                break;
+                    strcpy(serang2,"Serang");
+                    break;
                 case 3:
-                strcpy(serang2,"serang");
-                break;
-                case 4:
-                strcpy(serang2,"serang");
-                break;
-                case 5:
-                strcpy(serang2,"serang");
-                break;
+                    strcpy(serang2,"Serang");
+                    break;
             }
             if(s==1&&r==1)
             {
@@ -114,24 +103,24 @@ int main()
             }
             else if(s==1&&r==0)
             {
-            h2=h2-a1;
-            printf("%s %s %s\n",nama[c],serang1,nama[rn]);
-            printf("%s bertahan",nama[rn]);
+                h2=h2-a1;
+                printf("%s %s %s\n",nama[c],serang1,nama[rn]);
+                printf("%s bertahan",nama[rn]);
             }
             else if(s==0&&r==1)
             {
-            h1=h1-a2;
-            printf("%s bertahan",nama[c]);
-            printf("%s %s %s\n",nama[rn],serang2,nama[c]);
+                h1=h1-a2;
+                printf("%s bertahan\n",nama[c]);
+                printf("%s %s %s\n",nama[rn],serang2,nama[c]);
             }
             else
             {
                 printf("Sama-sama bertahan");
             }
             getch();
-            if(h1<=0){printf("\n\nYou Win...");z=0;getch();}
-            else if(h2<=0){printf("\n\nMantap BOS...");z=0;getch();}
+            if(h1<=0){printf("\n\nYou Win!...");z=0;getch();}
+            else if(h2<=0){printf("\n\nMantap Bos...");z=0;getch();}
             else if(h1<=0&&h2<=0){printf("\n\nSeri BOS?...");z=0;getch();}
         }while(z!=0);
-    }while(u!=0);
+	}while(u!=0);
 }
