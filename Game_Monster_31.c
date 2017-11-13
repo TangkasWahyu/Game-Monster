@@ -120,6 +120,6 @@ int main()
             if(h1<=0){printf("\n\nYou Win!...");z=0;getch();}
             else if(h2<=0){printf("\n\nMantap Bos...");z=0;getch();}
             else if(h1<=0&&h2<=0){printf("\n\nSeri BOS?...");z=0;getch();}
-            }while(z!=0);
+        }while(z!=0);
 	}while(u!=0);
 }
